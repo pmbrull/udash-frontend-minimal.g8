@@ -1,9 +1,26 @@
-ThisBuild / scalaVersion := $scala_version$
+name := "$name;format="normalize"$"
+
+inThisBuild(Seq(
+  version := "0.7.0-SNAPSHOT",
+  scalaVersion := "$scala_version$",
+  scalacOptions ++= Seq(
+    "-feature",
+    "-deprecation",
+    "-unchecked",
+    "-language:implicitConversions",
+    "-language:existentials",
+    "-language:dynamics",
+    "-Xfuture",
+    "-Xfatal-warnings",
+    "-Xlint:_,-missing-interpolator,-adapted-args"
+  ),
+))
+
+val generatedDir = file("generated")
 
 lazy val root = (project in file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
-    name := "$name;format="normalize"$",
     mainClass := Some("$package$.JSLauncher"),
     scalaJSUseMainModuleInitializer := true,
 
