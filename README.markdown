@@ -1,1 +1,1 @@
-A [Giter8][g8] template for Udash-Minimal.
+A Giter8 template for Udash-Minimal based on the open demos from Udash Framework.
