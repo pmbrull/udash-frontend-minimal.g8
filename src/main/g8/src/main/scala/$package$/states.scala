@@ -5,8 +5,7 @@ import io.udash._
 sealed abstract class RoutingState(val parentState: Option[ContainerRoutingState]) extends State {
   type HierarchyRoot = RoutingState
 
-  def url(implicit application: Application[RoutingState]): String =
-    s"#${application.matchState(this).value}"
+  def url(implicit application: Application[RoutingState]): String = "#" + application.matchState(this).value
 }
 
 sealed abstract class ContainerRoutingState(parentState: Option[ContainerRoutingState]) extends RoutingState(parentState) with ContainerState
