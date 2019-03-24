@@ -7,6 +7,7 @@ import org.scalajs.dom.Element
 import scala.scalajs.js.annotation.JSExport
 
 object JSLauncher extends CrossLogging {
+  import ApplicationContext._
 
   @JSExport
   def main(args: Array[String]): Unit = {

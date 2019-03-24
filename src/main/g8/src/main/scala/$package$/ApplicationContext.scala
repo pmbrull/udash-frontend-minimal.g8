@@ -2,9 +2,10 @@ package $package$
 
 import io.udash.Application
 
-class ApplicationContext {
-  private val routingRegistry = ???
-  private val viewFactoriesRegistry = ???
+object ApplicationContext {
+  private val routingRegistry = new RoutingRegistryDef
+  private val viewFactoriesRegistry = new StatesToViewFactoryDef
 
-  val applicationInstance =  ???
+  val applicationInstance: Application[RoutingState] =
+    new Application[RoutingState](routingRegistry, viewFactoriesRegistry)
 }
